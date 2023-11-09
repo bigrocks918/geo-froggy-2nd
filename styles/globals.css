@@ -1,0 +1,64 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap"); */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  font-family: Inter, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;                   
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.custom-input::placeholder {
+  color: #CFE5F5;
+  font-style: italic;
+}
+
+.custom-checkbox-container:hover input ~ .checkbox-checkmark {
+  /*background-color: rgba(255, 255, 255, 0.50);*/
+}
+
+/* When the checkbox is checked, add a blue background */
+.custom-checkbox-container input:checked ~ .checkbox-checkmark {
+  /*background-color: #2196F3;*/
+}
+
+/* Create the checkbox-checkmark/indicator (hidden when not checked) */
+.checkbox-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkbox-checkmark when checked */
+.custom-checkbox-container input:checked ~ .checkbox-checkmark:after {
+  display: block;
+}
+
+/* Style the checkbox-checkmark/indicator */
+.custom-checkbox-container .checkbox-checkmark:after {
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+}
